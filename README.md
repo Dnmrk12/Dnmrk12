@@ -13,9 +13,9 @@
 
 ### 📌 About Me
 
-I'm **Anmark**, a fresh graduate with a **Bachelor of Science in Information Technology**.  
-I'm passionate about **networking**, and I also enjoy working with **backend development**, learning **Microsoft Azure**, and exploring **automation with UiPath**.  
-I know how to use UiPath for basic process automation and am currently learning more about **cloud fundamentals** and practical project building.
+I'm Anmark, a fresh graduate with a Bachelor of Science in Information Technology.
+I'm passionate about networking and enjoy working with backend development, exploring Microsoft Azure, and learning automation using UiPath.
+I'm familiar with UiPath, capable of handling basic process automation, and currently learning cloud fundamentals while building small practical projects.
 
 > 🔗 **[Check out my portfolio here](https://your-portfolio-link.com)** to know more about me and see my work.
 
