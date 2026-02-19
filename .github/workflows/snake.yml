@@ -2,26 +2,42 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # daily at midnight UTC (which is 8 AM Manila time)
-  workflow_dispatch:     # this enables manual triggering
+    - cron: "0 0 * * *"  # daily at midnight UTC (~8 AM Manila)
+  workflow_dispatch:     # manual trigger
+
+permissions:
+  contents: write        # single place for write access
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Generate Snake
+      - name: Generate Snake Animation
         uses: Platane/snk@v3
-        id: snake-gif
+        id: snake
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             output/github-contribution-grid-snake.svg
             output/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Push to output branch
+      # ── Debug: List generated files ────────────────────────────────────────
+      - name: Debug - Show generated files
+        run: |
+          ls -la output/ || echo "output/ directory is empty or missing"
+          if [ -f output/github-contribution-grid-snake-dark.svg ]; then
+            echo "Dark snake SVG exists"
+          else
+            echo "Dark snake SVG MISSING"
+          fi
+
+      # ── Push only if files exist ───────────────────────────────────────────
+      - name: Push snake SVGs to output branch
         uses: crazy-max/ghaction-github-pages@v4
+        if: success() && hashFiles('output/*.svg') != ''
         with:
           target_branch: output
           build_dir: output
