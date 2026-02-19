@@ -53,11 +53,6 @@ Currently working on small practical projects that combine APIs, databases, clou
 ---
 
 ### 📊 GitHub Activity
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Dnmrk12&hide=stars,prs,issues,contribs&hide_title=true&hide_border=true&show_icons=false&theme=tokyonight&include_all_commits=false&count_private=false&rank_icon=none" alt="Minimal Contributions Count" />
-</p>
-
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com?user=Dnmrk12&theme=tokyonight&hide_border=true&date_format=M+j&card_width=400" alt="Contribution Streak" />
 </p>
