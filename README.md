@@ -8,7 +8,7 @@
 <p align="center">
   <img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" width="380" alt="Animated developer coding with energy" />
   <br>
-  <small>Currently grinding code & cloud ☁️💻</small>
+  <small>Currently grinding code 💻</small>
 </p>
 
 <p align="center">
