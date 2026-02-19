@@ -2,8 +2,8 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # daily at midnight UTC
-  workflow_dispatch:     # allows manual trigger
+    - cron: "0 0 * * *"  # daily at midnight UTC (which is 8 AM Manila time)
+  workflow_dispatch:     # this enables manual triggering
 
 jobs:
   generate:
