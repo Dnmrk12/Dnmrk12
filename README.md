@@ -57,8 +57,7 @@ Currently working on small practical projects that combine APIs, databases, clou
   <img src="https://github-readme-streak-stats.herokuapp.com?user=Dnmrk12&theme=tokyonight&hide_border=true&date_format=M+j&card_width=400" alt="Contribution Streak" />
 </p>
 
-<!-- Snake animation (auto dark/light) -->
-<!-- Snake animation (auto dark/light) -->
+<!-- Snake animation (auto switches dark/light) -->
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dnmrk12/Dnmrk12/output/github-contribution-grid-snake-dark.svg" />
@@ -69,7 +68,7 @@ Currently working on small practical projects that combine APIs, databases, clou
   </picture>
   <br>
   <small>🐍 Snake eating my contributions</small>
-</p>
+</p>>
 
 ---
 
