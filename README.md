@@ -54,9 +54,7 @@ Currently building small projects that mix APIs, databases, cloud deployment, an
 
 ### GitHub Activity
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Dnmrk12&show_icons=false&theme=tokyonight&hide_border=true&hide_title=true&include_all_commits=false&count_private=false" alt="Stats" width="420"/>
-</p>
+
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com?user=Dnmrk12&theme=tokyonight&hide_border=true&date_format=M+j" alt="Streak" width="420"/>
