@@ -2,11 +2,11 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # daily at midnight UTC (~8 AM Manila)
-  workflow_dispatch:     # manual trigger
+    - cron: "0 0 * * *"  # daily
+  workflow_dispatch:
 
 permissions:
-  contents: write        # single place for write access
+  contents: write
 
 jobs:
   generate:
@@ -17,29 +17,35 @@ jobs:
 
       - name: Generate Snake Animation
         uses: Platane/snk@v3
-        id: snake
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             output/github-contribution-grid-snake.svg
             output/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # ── Debug: List generated files ────────────────────────────────────────
-      - name: Debug - Show generated files
+      - name: Debug - Check generated files
         run: |
-          ls -la output/ || echo "output/ directory is empty or missing"
+          ls -la output/ || echo "No output directory"
           if [ -f output/github-contribution-grid-snake-dark.svg ]; then
-            echo "Dark snake SVG exists"
+            echo "SVG files generated successfully"
           else
-            echo "Dark snake SVG MISSING"
+            echo "ERROR: No SVG files found – check Platane/snk step"
+            exit 1
           fi
 
-      # ── Push only if files exist ───────────────────────────────────────────
-      - name: Push snake SVGs to output branch
-        uses: crazy-max/ghaction-github-pages@v4
-        if: success() && hashFiles('output/*.svg') != ''
-        with:
-          target_branch: output
-          build_dir: output
+      - name: Commit and push snake SVGs to output branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git checkout -b output || git checkout output
+          
+          mkdir -p output
+          # Files already in output/ from snk step
+          
+          git add output/*.svg
+          git commit -m "Update snake animation [ci skip]" || echo "No changes to commit"
+          
+          git push --set-upstream origin output --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
